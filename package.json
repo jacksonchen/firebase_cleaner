@@ -1,0 +1,19 @@
+{
+  "name": "databaseCleaner",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.6.0",
+    "commander": "^2.12.2",
+    "firebase": "^4.6.0",
+    "firebase-admin": "^5.5.1",
+    "minimist": "^1.2.0"
+  }
+}
