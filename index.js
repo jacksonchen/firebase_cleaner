@@ -42,27 +42,6 @@ var connectDB = function(production) {
   });
 }
 
-var initialize = function(snapVal, snapKey) {
-  return new Promise((resolve, reject) => {
-    // randomizing a seed
-    let snapGlider = snapVal.gliders[0],
-        seed = randomize.randomize(snapGlider.params, snapGlider.evalEquationParams);
-
-    // if the seed's Flyability is 0 or less, keep randomizing
-    while(seed["Flyability"] <= 0){
-      seed = randomize.randomize(seed, snapGlider.evalEquationParams);
-    }
-
-    // saving the seed
-    evo.child(snapKey + '/gliders/0/')
-       .update({seed: seed})
-       .then(resolve(seed))
-       .catch((err) => {
-         reject(err)
-       });
-  });
-}
-
 // Logic starts here
 program
   .version('1.0.0')
